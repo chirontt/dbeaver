@@ -13,6 +13,8 @@
         <dbeaver-product>DBeaver</dbeaver-product>
         <tycho-version>3.0.1</tycho-version>
         <eclipse-version>2023-09</eclipse-version>
+        <!-- Eclipse Platform version, to match the above eclipse-version -->
+        <eclipse-platform-version>4.29</eclipse-platform-version>
         <eclipse-repo-url>https://download.eclipse.org/releases</eclipse-repo-url>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.build.timestamp.format>yyyyMMddHHmm</maven.build.timestamp.format>
@@ -24,6 +26,8 @@
         <eclipse-p2-repo.url>${eclipse-repo-url}/${eclipse-version}/</eclipse-p2-repo.url>
         <!-- Orbit deps. We need it for CB at least -->
         <orbit-repo.url>https://download.eclipse.org/tools/orbit/downloads/drops/R20221123021534/repository/</orbit-repo.url>
+        <!-- temp win32.aarch64 p2 repo, until Eclipse's official p2 repo supports Windows on Arm64 -->
+        <win32-aarch64-p2-repo.url>https://chirontt.github.io/p2/platform/${eclipse-platform-version}/</win32-aarch64-p2-repo.url>
 
         <key.storage.path>/etc/</key.storage.path>
         <tsa/>
@@ -49,6 +53,12 @@
         <repository>
             <id>orbit-repo</id>
             <url>${orbit-repo.url}</url>
+            <layout>p2</layout>
+        </repository>
+        <!-- temp win32.aarch64 p2 repo, until Eclipse's official p2 repo supports Windows on Arm64 -->
+        <repository>
+            <id>win32-aarch64-p2-repo</id>
+            <url>${win32-aarch64-p2-repo.url}</url>
             <layout>p2</layout>
         </repository>
     </repositories>
@@ -177,6 +187,11 @@
                                     <os>win32</os>
                                     <ws>win32</ws>
                                     <arch>x86_64</arch>
+                                </environment>
+                                <environment>
+                                    <os>win32</os>
+                                    <ws>win32</ws>
+                                    <arch>aarch64</arch>
                                 </environment>
                                 <environment>
                                     <os>linux</os>
