@@ -1,3 +1,13 @@
+# DBeaver for Windows on Arm64
+
+This fork updates the Maven script to build additional DBeaver software for Windows on Arm64.
+It makes use of my online Eclipse p2 [platform runtime repos](https://chirontt.github.io/p2/platform/),
+which include `win32.aarch64` artifacts, during the Maven build.
+
+Original [README.md](https://github.com/dbeaver/dbeaver#readme) text is as followed.
+
+----
+
 [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/dbeaver_news.svg?style=social&label=Follow%20%40dbeaver_news)](https://twitter.com/dbeaver_news)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/fa0bb9cf5a904c7d87424f8f6351ba92)](https://app.codacy.com/gh/dbeaver/dbeaver/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 [![Apache 2.0](https://img.shields.io/github/license/cronn-de/jira-sync.svg)](http://www.apache.org/licenses/LICENSE-2.0)
