@@ -18,6 +18,9 @@
         <local-p2-repo.url>https://dbeaver.io/eclipse-repo</local-p2-repo.url>
         <eclipse-p2-repo.url>https://download.eclipse.org/releases/2023-03/</eclipse-p2-repo.url>
         <orbit-repo.url>https://download.eclipse.org/tools/orbit/downloads/drops/R20221123021534/repository/</orbit-repo.url>
+        <!-- temp win32.aarch64 p2 repo, until Eclipse's official p2 repo supports Windows on Arm64;
+             should override it with -Dwin32-aarch64-p2-repo.url=... when invoking the mvn command -->
+        <win32-aarch64-p2-repo.url>${eclipse-p2-repo.url}</win32-aarch64-p2-repo.url>
 
         <key.storage.path>/etc/</key.storage.path>
         <tsa/>
@@ -43,6 +46,12 @@
         <repository>
             <id>orbit-repo</id>
             <url>${orbit-repo.url}</url>
+            <layout>p2</layout>
+        </repository>
+        <!-- temp win32.aarch64 p2 repo, until Eclipse's official p2 repo supports Windows on Arm64 -->
+        <repository>
+            <id>win32-aarch64-contrib</id>
+            <url>${win32-aarch64-p2-repo.url}</url>
             <layout>p2</layout>
         </repository>
     </repositories>
@@ -178,6 +187,11 @@
                                     <os>win32</os>
                                     <ws>win32</ws>
                                     <arch>x86_64</arch>
+                                </environment>
+                                <environment>
+                                    <os>win32</os>
+                                    <ws>win32</ws>
+                                    <arch>aarch64</arch>
                                 </environment>
                                 <environment>
                                     <os>linux</os>
