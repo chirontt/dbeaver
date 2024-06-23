@@ -1,3 +1,15 @@
+# DBeaver for Windows on Arm64
+
+This fork updates the Maven script to build additional DBeaver software for Windows on Arm64.
+
+DBeaver build script now uses the Eclipse 2024-06 release's [p2 platform repo](https://download.eclipse.org/releases/2024-06),
+which now includes relevant `win32.aarch64` fragments, so a new target environment for Windows on Arm64
+is added to the current build script to produce the Windows on Arm64 artifacts for DBeaver during the Maven build.
+
+Original [README.md](https://github.com/dbeaver/dbeaver#readme) text is as followed.
+
+----
+
 [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/dbeaver_news.svg?style=social&label=Follow%20%40dbeaver_news)](https://twitter.com/dbeaver_news)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/fa0bb9cf5a904c7d87424f8f6351ba92)](https://app.codacy.com/gh/dbeaver/dbeaver/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 [![Apache 2.0](https://img.shields.io/github/license/cronn-de/jira-sync.svg)](http://www.apache.org/licenses/LICENSE-2.0)
