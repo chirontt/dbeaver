@@ -23,6 +23,11 @@
         <local-p2-repo.version>${dbeaver-version}</local-p2-repo.version>
         <local-p2-repo.url>https://p2.dev.dbeaver.com/eclipse-repo/${local-p2-repo.version}</local-p2-repo.url>
 
+        <!-- Eclipse Platform version, to match with the 'eclipse-version' common property -->
+        <eclipse-platform-version>4.33</eclipse-platform-version>
+        <!-- temp FreeBSD p2 repo, until Eclipse's official p2 repo supports FreeBSD aarch64/x86_64 platforms -->
+        <freebsd-p2-repo.url>https://chirontt.github.io/p2/platform/${eclipse-platform-version}/</freebsd-p2-repo.url>
+
         <key.storage.path>/etc/</key.storage.path>
         <tsa/>
     </properties>
@@ -36,6 +41,12 @@
         <repository>
             <id>local-contrib</id>
             <url>${local-p2-repo.url}</url>
+            <layout>p2</layout>
+        </repository>
+        <!-- temp FreeBSD p2 repo, until Eclipse's official p2 repo supports FreeBSD aarch64/x86_64 platforms -->
+        <repository>
+            <id>freebsd-p2-repo</id>
+            <url>${freebsd-p2-repo.url}</url>
             <layout>p2</layout>
         </repository>
     </repositories>
@@ -69,6 +80,11 @@
                         </environment>
                         <environment>
                             <os>linux</os>
+                            <ws>gtk</ws>
+                            <arch>x86_64</arch>
+                        </environment>
+                        <environment>
+                            <os>freebsd</os>
                             <ws>gtk</ws>
                             <arch>x86_64</arch>
                         </environment>
@@ -179,6 +195,16 @@
                                 </environment>
                                 <environment>
                                     <os>linux</os>
+                                    <ws>gtk</ws>
+                                    <arch>aarch64</arch>
+                                </environment>
+                                <environment>
+                                    <os>freebsd</os>
+                                    <ws>gtk</ws>
+                                    <arch>x86_64</arch>
+                                </environment>
+                                <environment>
+                                    <os>freebsd</os>
                                     <ws>gtk</ws>
                                     <arch>aarch64</arch>
                                 </environment>
