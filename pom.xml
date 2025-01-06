@@ -23,6 +23,16 @@
         <local-p2-repo.version>${dbeaver-version}</local-p2-repo.version>
         <local-p2-repo.url>https://p2.dev.dbeaver.com/eclipse-repo/${local-p2-repo.version}</local-p2-repo.url>
 
+        <!-- Eclipse Platform version, to match with the 'eclipse-version' common property -->
+        <eclipse-platform-version>4.34.0</eclipse-platform-version>
+        <!-- temp FreeBSD p2 repo, until Eclipse's official p2 repo supports FreeBSD aarch64/x86_64 platforms -->
+        <freebsd-p2-repo.url>https://chirontt.github.io/p2/platform/repository/${eclipse-platform-version}/</freebsd-p2-repo.url>
+
+        <!-- embedded JustJ JRE settings, using the 'java.version' common property -->
+        <justj.jres.repository>https://download.eclipse.org/justj/jres/${java.version}/updates/release/latest</justj.jres.repository>
+        <!-- the JustJ execution environment for the target-platform-configuration -->
+        <execution.environment>org.eclipse.justj.openjdk.hotspot.jre.full-${java.version}</execution.environment>
+
         <key.storage.path>/etc/</key.storage.path>
         <tsa/>
     </properties>
@@ -39,6 +49,17 @@
         <repository>
             <id>local-contrib</id>
             <url>${local-p2-repo.url}</url>
+            <layout>p2</layout>
+        </repository>
+        <repository>
+            <id>justj-p2-repo</id>
+            <url>${justj.jres.repository}</url>
+            <layout>p2</layout>
+        </repository>
+        <!-- temp FreeBSD p2 repo, until Eclipse's official p2 repo supports FreeBSD aarch64/x86_64 platforms -->
+        <repository>
+            <id>freebsd-p2-repo</id>
+            <url>${freebsd-p2-repo.url}</url>
             <layout>p2</layout>
         </repository>
     </repositories>
@@ -62,6 +83,7 @@
                 <artifactId>target-platform-configuration</artifactId>
                 <version>${tycho-version}</version>
                 <configuration>
+                    <executionEnvironment>${execution.environment}</executionEnvironment>
                     <pomDependencies>consider</pomDependencies>
                     <environments>
                         <environment>
@@ -71,6 +93,11 @@
                         </environment>
                         <environment>
                             <os>linux</os>
+                            <ws>gtk</ws>
+                            <arch>x86_64</arch>
+                        </environment>
+                        <environment>
+                            <os>freebsd</os>
                             <ws>gtk</ws>
                             <arch>x86_64</arch>
                         </environment>
@@ -97,9 +124,8 @@
                 <version>${tycho-version}</version>
                 <configuration>
                     <useProjectSettings>false</useProjectSettings>
-                    <source>17</source>
-                    <target>17</target>
-                    <compilerVersion>17</compilerVersion>
+                    <release>${java.version}</release>
+                    <compilerVersion>${java.version}</compilerVersion>
                 </configuration>
             </plugin>
 
@@ -181,6 +207,16 @@
                                 </environment>
                                 <environment>
                                     <os>linux</os>
+                                    <ws>gtk</ws>
+                                    <arch>aarch64</arch>
+                                </environment>
+                                <environment>
+                                    <os>freebsd</os>
+                                    <ws>gtk</ws>
+                                    <arch>x86_64</arch>
+                                </environment>
+                                <environment>
+                                    <os>freebsd</os>
                                     <ws>gtk</ws>
                                     <arch>aarch64</arch>
                                 </environment>
