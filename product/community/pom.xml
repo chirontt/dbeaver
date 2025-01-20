@@ -24,6 +24,7 @@
                     <formats>
                         <win32>zip</win32>
                         <linux>tar.gz</linux>
+                        <freebsd>tar.gz</freebsd>
                         <macosx>tar.gz</macosx>
                         <solaris>tar.gz</solaris>
                     </formats>
@@ -36,6 +37,7 @@
                                 <macosx>DBeaver.app</macosx>
                                 <win32>dbeaver</win32>
                                 <linux>dbeaver</linux>
+                                <freebsd>dbeaver</freebsd>
                                 <solaris>dbeaver</solaris>
                             </rootFolders>
                         </product>
@@ -51,7 +53,7 @@
                     <execution>
                         <id>archive-products</id>
                         <goals>
-                            <!--<goal>archive-products</goal>-->
+                            <goal>archive-products</goal>
                         </goals>
                     </execution>
                 </executions>
