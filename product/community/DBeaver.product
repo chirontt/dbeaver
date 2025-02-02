@@ -10,7 +10,6 @@
 
     <launcherArgs>
         <programArgs></programArgs>
-        <programArgsMac>-vm ../Eclipse/jre/Contents/Home/lib/libjli.dylib</programArgsMac>
 
         <vmArgs>
             -XX:+IgnoreUnrecognizedVMOptions
@@ -50,6 +49,7 @@
 
     <launcher name="dbeaver">
         <linux icon="/icons/dbeaver.xpm"/>
+        <freebsd icon="/icons/dbeaver.xpm"/>
         <macosx icon="/icons/dbeaver.icns"/>
         <solaris/>
         <win useIco="true">
@@ -85,6 +85,8 @@
 
     <features>
         <feature id="org.jkiss.dbeaver.ce.feature"/>
+        <!-- to be added when moving to Java 21 -->
+        <!-- feature id="org.eclipse.justj.openjdk.hotspot.jre.full" installMode="root"/ -->
     </features>
 
     <configurations>
