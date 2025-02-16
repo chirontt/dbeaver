@@ -377,6 +377,8 @@ public class DBeaverLauncher {
             return Constants.WS_WIN32;
         if (osName.equals(Constants.OS_LINUX))
             return Constants.WS_GTK;
+        if (osName.equals(Constants.OS_FREEBSD))
+            return Constants.WS_GTK;
         if (osName.equals(Constants.OS_MACOSX))
             return Constants.WS_COCOA;
         if (osName.equals(Constants.OS_HPUX))
@@ -406,6 +408,8 @@ public class DBeaverLauncher {
             return Constants.OS_SOLARIS;
         if (osName.equalsIgnoreCase(Constants.INTERNAL_OS_LINUX))
             return Constants.OS_LINUX;
+        if (osName.equalsIgnoreCase(Constants.INTERNAL_OS_FREEBSD))
+            return Constants.OS_FREEBSD;
         if (osName.equalsIgnoreCase(Constants.INTERNAL_OS_QNX))
             return Constants.OS_QNX;
         if (osName.equalsIgnoreCase(Constants.INTERNAL_OS_AIX))
@@ -1876,7 +1880,7 @@ public class DBeaverLauncher {
         } else if (osName.contains("MAC")) {
             workingDirectory = System.getProperty("user.home") + "/Library/" + defaultWorkspaceLocation;
         } else {
-            // Linux
+            // Linux & FreeBSD
             String dataHome = System.getProperty("XDG_DATA_HOME");
             if (dataHome == null) {
                 dataHome = System.getProperty("user.home") + "/.local/share";
