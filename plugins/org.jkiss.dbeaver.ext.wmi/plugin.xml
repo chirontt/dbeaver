@@ -2,7 +2,7 @@
 <?eclipse version="3.2"?>
 <!--
  * DBeaver - Universal Database Manager
- * Copyright (C) 2010-2024 DBeaver Corp and others
+ * Copyright (C) 2010-2025 DBeaver Corp and others
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,8 +71,8 @@
                     class="org.jkiss.wmi.service.WMIServiceNative"
                     customDriverLoader="true"
                     categories="embedded">
-                    <file type="lib" os="win32" arch="x86" path="platform:/plugin/org.jkiss.wmi/native/x86/jkiss_wmi.dll"/>
                     <file type="lib" os="win32" arch="x86_64" path="platform:/plugin/org.jkiss.wmi/native/x64/jkiss_wmi.dll"/>
+                    <file type="lib" os="win32" arch="aarch64" path="platform:/plugin/org.jkiss.wmi/native/arm64/jkiss_wmi.dll"/>
                 </driver>
             </drivers>
         </datasource>
