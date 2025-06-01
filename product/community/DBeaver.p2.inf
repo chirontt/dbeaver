@@ -15,3 +15,25 @@ instructions.configure=\
   addRepository(type:1,location:https${#58}//dbeaver.io/update/ce/latest/,name:DBeaver CE update site,enabled:true);\
   addRepository(type:0,location:https${#58}//devstyle.codetogether.io/,name:Darkest Dark Theme,enabled:true);\
   addRepository(type:1,location:https${#58}//devstyle.codetogether.io/,name:Darkest Dark Theme,enabled:true);
+
+#create a requirement on the dbeaverc_exe_rename fragment
+requires.0.namespace=org.eclipse.equinox.p2.iu
+requires.0.name=dbeaverc_exe_rename.config.win32
+requires.0.range=[$version$,$version$]
+requires.0.greedy=true
+requires.0.filter=(osgi.os=win32)
+
+#create a IU fragment dbeaverc_exe_rename with touchpoint actions
+units.0.id = dbeaverc_exe_rename.config.win32
+units.0.version = $version$
+units.0.provides.1.namespace=org.eclipse.equinox.p2.iu
+units.0.provides.1.name=dbeaverc_exe_rename.config.win32
+units.0.provides.1.version=$version$
+units.0.filter=(osgi.os=win32)
+units.0.instructions.configure = \
+org.eclipse.equinox.p2.touchpoint.eclipse.addJvmArg(jvmArg:-Ddbeaver.distribution.type=zip);\
+org.eclipse.equinox.p2.touchpoint.natives.copy(\
+source:${installFolder}/dbeaverc.exe,\
+target:${installFolder}/dbeaver-cli.exe,overwrite:true);\
+org.eclipse.equinox.p2.touchpoint.natives.remove(\
+path:${installFolder}/dbeaverc.exe);
