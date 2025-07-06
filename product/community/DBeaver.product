@@ -50,6 +50,7 @@
 
     <launcher name="dbeaver">
         <linux icon="/icons/dbeaver.xpm"/>
+        <freebsd icon="icons/dbeaver.xpm"/>
         <macosx icon="/icons/dbeaver.icns"/>
         <solaris/>
         <win useIco="true">
