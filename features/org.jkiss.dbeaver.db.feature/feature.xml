@@ -6,7 +6,7 @@
       provider-name="DBeaver Corp">
 
    <copyright>DBeaver Corp and others</copyright>
-   <license url="https://dbeaver.io/product/dbeaver_license.txt"/>
+   <license url="https://dbeaver.io/product/dbeaver_license.txt">Apache License Version 2.0</license>
 
    <plugin id="org.jkiss.dbeaver.ext.db2" version="0.0.0"/>
    <plugin id="org.jkiss.dbeaver.ext.mysql" version="0.0.0" />
