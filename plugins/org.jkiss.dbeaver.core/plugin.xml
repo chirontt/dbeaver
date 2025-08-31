@@ -771,14 +771,14 @@
         </menuContribution>
         <menuContribution allPopups="false" locationURI="menu:org.jkiss.dbeaver.core.commit.menu">
             <command commandId="org.jkiss.dbeaver.core.commit"/>
-            <separator visible="true"/>
+            <separator visible="true" name=""/>
             <command commandId="org.jkiss.dbeaver.core.txn.log">
                 <parameter name="showAll" value="true"/>
             </command>
         </menuContribution>
         <menuContribution allPopups="false" locationURI="menu:org.jkiss.dbeaver.core.rollback.menu">
             <command commandId="org.jkiss.dbeaver.core.rollback"/>
-            <separator visible="true"/>
+            <separator visible="true" name=""/>
             <command commandId="org.jkiss.dbeaver.core.txn.log">
                 <parameter name="showAll" value="true"/>
             </command>
