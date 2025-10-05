@@ -11,4 +11,12 @@
   <artifactId>org.jkiss.dbeaver.ui.swt.macos</artifactId>
   <version>1.0.29-SNAPSHOT</version>
   <packaging>eclipse-plugin</packaging>
+  <dependencies>
+    <dependency>
+      <groupId>org.eclipse.platform</groupId>
+      <artifactId>org.eclipse.swt.cocoa.macosx.x86_64</artifactId>
+      <version>${swt-version}</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
 </project>
