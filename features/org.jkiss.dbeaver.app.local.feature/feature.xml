@@ -7,7 +7,7 @@
         provider-name="DBeaver Corp">
 
     <copyright>DBeaver Corp and others</copyright>
-    <license url="https://dbeaver.io/product/dbeaver_license.txt"/>
+    <license url="https://dbeaver.io/product/dbeaver_license.txt">Apache License Version 2.0</license>
 
     <!-- Quick search. Includes minimized ant bundle. No included in non-local as it uses local FS. -->
     <plugin id="org.eclipse.text.quicksearch" version="0.0.0"/>
