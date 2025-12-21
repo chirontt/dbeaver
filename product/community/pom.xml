@@ -42,6 +42,12 @@
                             <goal>materialize-products</goal>
                         </goals>
                     </execution>
+                    <execution>
+                        <id>archive-products</id>
+                        <goals>
+                            <goal>archive-products</goal>
+                        </goals>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>

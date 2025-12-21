@@ -11,8 +11,7 @@ Bundle-ActivationPolicy: lazy
 SWT-WS: cocoa
 SWT-OS: macosx
 Eclipse-PlatformFilter: (& (osgi.ws=cocoa) (osgi.os=macosx) )
-Export-Package: org.eclipse.swt.browser,
- org.jkiss.dbeaver.ui.swt.macos
+Export-Package: org.eclipse.swt.browser
 Require-Bundle: org.eclipse.swt,
  org.jkiss.dbeaver.model,
  org.jkiss.dbeaver.ui
