@@ -19,6 +19,8 @@
     <properties>
         <dbeaver-product>DBeaver</dbeaver-product>
 
+        <!-- Eclipse SWT version, to match with the 'eclipse-version' common property -->
+        <swt-version>3.133.0</swt-version>
         <key.storage.path>/etc/</key.storage.path>
         <tsa/>
     </properties>
