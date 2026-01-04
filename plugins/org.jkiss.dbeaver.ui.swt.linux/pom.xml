@@ -11,4 +11,12 @@
   <artifactId>org.jkiss.dbeaver.ui.swt.linux</artifactId>
   <version>1.0.30-SNAPSHOT</version>
   <packaging>eclipse-plugin</packaging>
+  <dependencies>
+    <dependency>
+      <groupId>org.eclipse.platform</groupId>
+      <artifactId>org.eclipse.swt.gtk.linux.x86_64</artifactId>
+      <version>${swt-version}</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
 </project>
