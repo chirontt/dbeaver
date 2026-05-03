@@ -22,6 +22,7 @@ Require-Bundle: org.jkiss.dbeaver.model.sql;visibility:=reexport,
  org.eclipse.ui.console,
  org.eclipse.e4.ui.model.workbench,
  org.eclipse.ui.forms,
+ org.eclipse.e4.ui.workbench,
  org.eclipse.e4.ui.workbench.renderers.swt
 Export-Package: org.jkiss.dbeaver.ui.controls,
  org.jkiss.dbeaver.ui.controls.querylog,
